@@ -1,0 +1,8 @@
+This library can be used to compute prediction distribution errors (npde), a
+metric designed to evaluate nonlinear mixed effect models.
+
+Details concerning the computation of npde and the pre-requisite simulations can
+be found in the User Guide (npde_userguide.pdf). An example of parameter
+estimation and simulation is shown using the NONMEM software, but other
+software, such as the library nlme in R can be used for both estimation and
+simulation.
