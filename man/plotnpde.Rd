@@ -17,7 +17,9 @@ plotnpde(xobs, npde, ypred)
   \item{ypred}{a vector giving the mean of the predicted distribution for each
 observation}
 }
-\details{Four graphs are produced:
+%\details{}
+\value{
+  Four graphs are produced:
 \item{a quantile-quantile plot}{plot of the npde versus the corresponding
 quantiles of a normal distribution, with the line y=x overlayed.}
 \item{a histogram of the npde}{the shape of the normal distribution is also
@@ -28,9 +30,6 @@ distribution; for these last two graphs, we plot the lines corresponding to y=0
 and to the 5% and 95% critical value of the normal distribution delimiting a
 90% prediction interval for the npde}
 }}
-\value{
-  None
-}
 \references{K. Brendel, E. Comets, C. Laffont, C. Laveille, and F. Mentré.
 Metrics for external model evaluation with an application to the population
 pharmacokinetics of gliclazide. \emph{Pharmaceutical Research}, 23:2036--49,

@@ -31,6 +31,6 @@ pharmacokinetics of gliclazide. \emph{Pharmaceutical Research}, 23:2036--49,
 \author{Emmanuelle Comets <emmanuelle.comets@bichat.inserm.fr>}
 
 \seealso{\code{\link{npde}}, \code{\link{autonpde}}, \code{\link{plotnpde}}}
-\examples{
-}
+%\examples{
+%}
 \keyword{models}

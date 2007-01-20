@@ -17,7 +17,9 @@ plotpd(xobs, pd, ypred)
   \item{ypred}{a vector giving the mean of the predicted distribution for each
 observation}
 }
-\details{Four graphs are produced:
+%\details{}
+\value{
+Four graphs are produced:
 \item{a quantile-quantile plot}{plot of the pd versus the corresponding
 quantiles of a uniform distribution, with the line y=x overlayed.}
 \item{a histogram of the pd}{the line corresponding to the uniform distribution
@@ -25,11 +27,7 @@ is also shown}
 \item{two scatterplots of the pd}{a plot of the pd versus the independent
 variable X and a plot of the pd versus the empirical mean of the predicted
 distribution; for these last two graphs, we plot the lines corresponding to
-y=0.5, y=0.05 and y=0.95.}
-}
-\value{
-  None
-}
+y=0.5, y=0.05 and y=0.95.}}
 \references{K. Brendel, E. Comets, C. Laffont, C. Laveille, and F. Mentré.
 Metrics for external model evaluation with an application to the population
 pharmacokinetics of gliclazide. \emph{Pharmaceutical Research}, 23:2036--49,
