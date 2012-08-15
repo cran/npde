@@ -15,7 +15,7 @@
       ordering is by Time at which the observation was made.
     }
     \item{Dose}{
-      dose of theophylline administered orally to the subject (mg/kg).
+      dose of theophylline administered orally to the subject (mg).
     }
     \item{Time}{
       time since drug administration when the sample was drawn (hr).
@@ -59,6 +59,7 @@
 }
 \examples{
 data(theopp)
+str(theopp)
 
 #Plotting the theophylline data
 plot(Conc~Time,data=theopp,xlab="Time after dose (hr)",
@@ -66,3 +67,4 @@ ylab="Theophylline concentration (mg/L)")
 
 }
 \keyword{datasets}
+
