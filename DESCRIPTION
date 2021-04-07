@@ -1,8 +1,8 @@
 Package: npde
 Title: Normalised Prediction Distribution Errors for Nonlinear
         Mixed-Effect Models
-Version: 3.0
-Date: 2021-02-01
+Version: 3.1
+Date: 2021-04-07
 Authors@R: c(person(given = "Emmanuelle",
            family = "Comets",
            role = c("aut", "cre"),
@@ -28,7 +28,7 @@ Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Depends: gridExtra, ggplot2, grid
-Imports: methods, scales, mclust, testthat, rlang
+Imports: methods, scales, mclust, rlang
 RoxygenNote: 7.1.1
 Collate: 'NpdeSimData.R' 'NpdeData.R' 'aaa_generics.R'
         'NpdeData-methods.R' 'NpdeRes.R' 'NpdeRes-methods.R'
@@ -40,11 +40,11 @@ Collate: 'NpdeSimData.R' 'NpdeData.R' 'aaa_generics.R'
         'plotNpde-distributionPlot.R' 'plotNpde-methods.R'
         'plotNpde-plotFunctions.R' 'plotNpde-scatterplot.R'
 NeedsCompilation: no
-Packaged: 2021-02-25 10:55:36 UTC; eco
+Packaged: 2021-04-07 16:25:52 UTC; eco
 Author: Emmanuelle Comets [aut, cre] (<https://orcid.org/0000-0002-9150-9886>),
   Karl Brendel [ctb],
   Thi Huyen Tram Nguyen [ctb],
   Romain Leroux [ctb],
   France Mentre [ctb]
 Repository: CRAN
-Date/Publication: 2021-02-25 16:00:02 UTC
+Date/Publication: 2021-04-07 17:00:02 UTC
