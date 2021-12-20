@@ -18,4 +18,8 @@ a ggplot object or a list of ggplot objects (grobs)
 \description{
 The default diagnostic plots produced after a call to \code{\link{npde}} or \code{\link{autonpde}} include a histogram of the distribution, a QQ-plot compared to the theoretical distribution, and scatterplots versus the independent variable and versus the population predictions from the model
 }
+\details{
+By default, npd are used for the diagnostic plots. If an unknown argument to which (eg which="XXX") is given, 
+this is changed to npd (with a warning message if verbose=TRUE or the verbose option in the option slot of the npdeObject is TRUE).
+}
 \keyword{plot}

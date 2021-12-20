@@ -4,15 +4,25 @@
 \alias{npdeSimData}
 \title{Creates a NpdeSimData object}
 \usage{
-npdeSimData(npde.data, name.simdata, header=TRUE, verbose=FALSE)
+npdeSimData(npde.data, name.simdata, header=TRUE, sep="", na.strings=c("NA","."), 
+detect=FALSE, verbose=FALSE)
 }
 \arguments{
 \item{npde.data}{a NpdeData object}
 
 \item{name.simdata}{name of the file containing the simulated data, or a dataframe containing it}
 
-\item{header}{boolean indicating whether the file has a header (mandatory if
-detect is TRUE)}
+\item{header}{boolean indicating whether the file has a header (a header is 
+mandatory if detect is TRUE)}
+
+\item{sep}{field separator (for files on disk)}
+
+\item{na.strings}{strings to be considered as indicating NA}
+
+\item{detect}{a boolean controlling whether automatic recognition of columns in the dataset is on, defaults to FALSE
+if FALSE, the first 3 columns of the simulated data file will will be used as simulated id, predictor and response respectively
+if TRUE, the function will look for columns named respectively idsim, xsim and ysim (it will fail with an error message if these columns
+are not present in the simulated data)}
 
 \item{verbose}{whether to print warning messages, defaults to FALSE (set to TRUE to check how data is being handled)}
 }

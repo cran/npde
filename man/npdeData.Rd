@@ -12,8 +12,8 @@ units=list(x="",y="",covariates=c()), detect=TRUE,verbose=FALSE)
 \item{name.data}{name of the file containing the observed data, or a dataframe
 containing the observed data}
 
-\item{header}{boolean indicating whether the file has a header (mandatory if
-detect is TRUE)}
+\item{header}{boolean indicating whether the file has a header (a header is 
+mandatory if detect is TRUE)}
 
 \item{sep}{field separator (for files on disk)}
 
@@ -70,6 +70,7 @@ print(x)
 x<-npdeData(theopp,name.group="ID",name.predictor="Time",name.response="Conc",
 name.covariates=c("Wt"),units=list(x="hr",y="mg/L",covariates="kg")) # Explicit
 print(x)
+
 }
 \references{
 K. Brendel, E. Comets, C. Laffont, C. Laveille, and F.

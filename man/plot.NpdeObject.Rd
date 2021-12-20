@@ -2,6 +2,8 @@
 % Please edit documentation in R/plotNpde-methods.R
 \name{plot.NpdeObject}
 \alias{plot.NpdeObject}
+\alias{plot.npde}
+\alias{plotNpde}
 \title{Plots a NpdeObject object}
 \usage{
 \method{plot}{NpdeObject}(x, y, ...)

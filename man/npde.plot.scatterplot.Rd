@@ -9,8 +9,7 @@
 \alias{aux.npdeplot.pimat}
 \alias{aux.npdeplot.transformPI}
 \alias{aux.npdeplot.transformObs}
-\title{#################    Scatterplots - VPC, scatterplots versus independent variable, predictions, covariates  ###################
-Scatterplots and VPC}
+\title{Scatterplots and VPC}
 \usage{
 npde.plot.scatterplot(npdeObject, which.x="x", which.y="npd", ref.prof=NULL, ...)
 }

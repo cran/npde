@@ -150,6 +150,9 @@ plot.NpdeRes <- function(x, y, ...) {
 #'
 #'  @references K. Brendel, E. Comets, C. Laffont, C. Laveille, and F.Mentre. Metrics for external model evaluation with an application to the population pharmacokinetics of gliclazide. \emph{Pharmaceutical Research}, 23:2036--49, 2006.
 #' @seealso \code{\link{set.plotoptions}}
+#' 
+#' @aliases plot.npde plotNpde
+#' 
 #' @keywords plot
 #' @examples
 #'\donttest{
@@ -254,7 +257,7 @@ plot.NpdeObject <- function(x, y, ...) {
               return( suppressWarnings(plot.data))
             },
             "default"={
-              plot.default<-plot.default<-npde.plot.default(x, ...)
+              plot.default<-npde.plot.default(x, ...)
               invisible( suppressWarnings( plot.default)) # doesn't work to return the plot, but if return, plots the 4 plots
             },
 
