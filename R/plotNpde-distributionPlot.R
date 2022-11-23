@@ -84,7 +84,9 @@ npde.plot.dist<-function(npdeObject, which="npd", dist.type="qqplot", ...) {
   covsplit<-plot.opt$covsplit
   if(covsplit) {
     if(is.numeric(plot.opt$which.cov)) plot.opt$which.cov<-npdeObject["data"]["name.covariates"][plot.opt$which.cov] # convert to names of covariates
-    if(plot.opt$which.cov=="all" | plot.opt$which.cov=="") plot.opt$which.cov<-npdeObject["data"]["name.covariates"]
+    if(length(plot.opt$which.cov)==1) {
+      if(plot.opt$which.cov=="all" | plot.opt$which.cov=="") plot.opt$which.cov<-npdeObject["data"]["name.covariates"]
+    }
   }
 
   # covariates in the npdeObject => hasCovariates TRUE / FALSE
@@ -332,6 +334,7 @@ npde.plot.loq<-function(npdeObject,xaxis="x",nsim=200,...) {
 
   # dataframe for ggplot
   ypl<-apply(xtab,2,quantile,quant)
+  rownames(ypl)<-c("lower","median","upper")
   xobs<-tapply(ydat,xgrp,mean)
   plotdata = data.frame(xpl,t(ypl),xobs)
 
@@ -418,32 +421,32 @@ npde.plot.loq<-function(npdeObject,xaxis="x",nsim=200,...) {
 
     coord_cartesian(xlim=x.limits, ylim=y.limits) +
 
-    geom_ribbon(aes(ymin = X2.5., ymax =  X97.5.) ,
+    geom_ribbon(aes(ymin = .data$lower, ymax =  .data$upper) ,
                 fill=plot.opt$fill.bands,
                 alpha = plot.opt$alpha.bands,
                 linetype=2) +
 
-    geom_line(aes(y = X2.5.),
+    geom_line(aes(y = .data$lower),
               color = plot.opt$col.bands,
               alpha = plot.opt$alpha.bands,
-              size = plot.opt$lwd.bands,
+              linewidth = plot.opt$lwd.bands,
               linetype = plot.opt$lty.bands) +
 
-    geom_line(aes(y = X97.5.),
+    geom_line(aes(y = .data$upper),
               color = plot.opt$col.bands,
               alpha = plot.opt$alpha.bands,
-              size = plot.opt$lwd.bands,
+              linewidth = plot.opt$lwd.bands,
               linetype = plot.opt$lty.bands) +
 
-    geom_line(aes(y = X50.),
+    geom_line(aes(y = .data$median),
               color = plot.opt$col.ther,
               alpha = plot.opt$alpha.ther,
-              size = plot.opt$lwd.ther,
+              linewidth = plot.opt$lwd.ther,
               linetype = plot.opt$lty.ther) +
 
-    geom_line(aes(y = xobs),
+    geom_line(aes(y = .data$xobs),
               color = plot.opt$col.lobs,
-              size = plot.opt$lwd.lobs,
+              linewidth = plot.opt$lwd.lobs,
               linetype = plot.opt$lty.lobs) +
 
     scale_x_continuous(plot.opt$xlab, scales::pretty_breaks(n = plot.opt$breaks.x))+

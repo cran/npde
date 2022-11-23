@@ -26,7 +26,7 @@ This is also performed for all simulated data, and the npde are then computed on
 }
 }
 \examples{
-\donttest{
+\dontrun{
 # You need to have gridExtra installed to successfully run this example
 if(requireNamespace("gridExtra", quietly=TRUE)) {
   data(warfarin)

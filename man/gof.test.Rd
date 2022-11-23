@@ -12,7 +12,7 @@
 \usage{
 gof.test(object, parametric = TRUE, ...)
 
-printgoftest(object, which = "npde", ...)
+printgoftest(object, ...)
 }
 \arguments{
 \item{object}{an object (currently has methods for types numeric, NpdeRes and NpdeObject)}
@@ -20,8 +20,6 @@ printgoftest(object, which = "npde", ...)
 \item{parametric}{a boolean. If TRUE (default), parametric tests are performed}
 
 \item{\dots}{additional arguments passed on to the function; special arguments are \code{na.action}, which controls how to handle NAs in the results (\code{\link{na.action}}), \code{verbose} (if FALSE, suppresses printing of the results) and \code{covsplit} which requests the tests to be performed split by categories or quantiles of the data. If \code{covsplit} is TRUE, continuous covariates will be split in 3 categories (<Q1, Q1-Q3, >Q3) (see details in the PDF documentation), but this behaviour can be overriden by passing the argument \code{ncat=XXX} where XXX is the number of categories to divide the continuous covariates in.}
-
-\item{which}{character string giving (used by printgoftest)}
 }
 \value{
 A list with the following elements:

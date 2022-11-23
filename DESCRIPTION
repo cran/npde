@@ -1,8 +1,8 @@
 Package: npde
 Title: Normalised Prediction Distribution Errors for Nonlinear
         Mixed-Effect Models
-Version: 3.2
-Date: 2021-12-10
+Version: 3.3
+Date: 2022-11-14
 Authors@R: c(person(given = "Emmanuelle",
            family = "Comets",
            role = c("aut", "cre"),
@@ -29,9 +29,8 @@ License: GPL (>= 2)
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Imports: methods, scales, ggplot2, mclust, grid, gridExtra, testthat,
-        rlang
-RoxygenNote: 7.1.2
+Imports: methods, scales, ggplot2, mclust, grid, gridExtra, rlang
+RoxygenNote: 7.2.2
 Collate: 'NpdeSimData.R' 'NpdeData.R' 'aaa_generics.R'
         'NpdeData-methods.R' 'NpdeRes.R' 'NpdeRes-methods.R'
         'NpdeObject.R' 'NpdeObject-methods.R' 'compute_distribution.R'
@@ -42,7 +41,7 @@ Collate: 'NpdeSimData.R' 'NpdeData.R' 'aaa_generics.R'
         'plotNpde-distributionPlot.R' 'plotNpde-methods.R'
         'plotNpde-plotFunctions.R' 'plotNpde-scatterplot.R'
 NeedsCompilation: no
-Packaged: 2021-12-20 16:58:02 UTC; eco
+Packaged: 2022-11-23 11:57:59 UTC; eco
 Author: Emmanuelle Comets [aut, cre] (<https://orcid.org/0000-0002-9150-9886>),
   Karl Brendel [ctb],
   Thi Huyen Tram Nguyen [ctb],
@@ -50,4 +49,4 @@ Author: Emmanuelle Comets [aut, cre] (<https://orcid.org/0000-0002-9150-9886>),
   Romain Leroux [ctb],
   France Mentre [ctb]
 Repository: CRAN
-Date/Publication: 2021-12-20 17:30:02 UTC
+Date/Publication: 2022-11-24 00:20:05 UTC

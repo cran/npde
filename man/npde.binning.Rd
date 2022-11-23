@@ -14,7 +14,7 @@ npde.binning(xvec, plot.opt, verbose = FALSE)
 \item{verbose}{boolean (defaults to FALSE). If TRUE, a table showing how the binning was performed}
 }
 \value{
-a list with 2 elements, xgrp (the number of the bin associated with each element of xvec) and xcent (a named vector containing the mean of the elements of xvec contained in each bin; the name of the bin is the interval).
+a list with 3 elements, xgrp (the number of the bin associated with each element of xvec), xcent (a named vector containing the mean of the elements of xvec contained in each bin; the name of the bin is the interval), and xgroup (a vector with the group associated to each element of xvec after binning)
 If verbose is TRUE, a table showing the bins is shown, giving the interval of xvec associated with each bin, the mean value
 of xvec in each bin, and the number of observations
 }
@@ -22,7 +22,7 @@ of xvec in each bin, and the number of observations
 Functions used by plot functions to define the boundaries of the bins on the X-axis
 }
 \details{
-These functions are normally not called by the end-user.
+These functions are normally not called by the end-user but are now exported for use in the saemix package.
 }
 \references{
 K. Brendel, E. Comets, C. Laffont, C. Laveille, and F.
@@ -36,4 +36,3 @@ population pharmacokinetics of gliclazide. \emph{Pharmaceutical Research},
 \author{
 Emmanuelle Comets <emmanuelle.comets@bichat.inserm.fr>
 }
-\keyword{internal}

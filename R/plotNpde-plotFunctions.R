@@ -184,25 +184,24 @@ npde.plot.data<-function(npdeObject,...) {
 
   # but plot plot(yvir50@data) = plot(yvir50,plot.type=“data”)
 
-
+  if(!is(npdeObject,"NpdeObject")) return()
   # data censored / no censored
   if(length(npdeObject["data"]["icens"])>0) {
     has.cens<-TRUE
-    icens<-npdeObject["data"]["icens"]
+#    icens<-npdeObject["data"]["icens"]
     is.cens<-npdeObject["data"]["data"]$cens==1
   } else { has.cens<-FALSE}
 
   # data plot x,y and id
   x<-npdeObject["data"]["data"][,npdeObject["data"]["name.predictor"]]
-  plot.opt<-npdeObject["prefs"]
-  id<-(npdeObject["data"]["data"]$index %in% plot.opt$ilist)
 
   # plot options and user options
   userPlotOptions = list(...)
-  plot.opt<-set.plotoptions.default(npdeObject)
+  plot.opt<-npdeObject["prefs"]
   plot.opt <- modifyList(plot.opt, userPlotOptions[intersect(names(userPlotOptions), names(plot.opt))])
   if(plot.opt$impute.loq)  y<-npdeObject["results"]["res"]$ycomp else y<-npdeObject["data"]["data"][,npdeObject["data"]["name.response"]]
-
+  id<-(npdeObject["data"]["data"]$index %in% plot.opt$ilist)
+  
   # meta arguments to change col,lwd,lty,pch for lines and symbols
   if ( plot.opt$size %in% userPlotOptions)    plot.opt$size.pobs = plot.opt$size
 
@@ -305,17 +304,17 @@ npde.plot.data<-function(npdeObject,...) {
                  size = plot.opt$size.pobs,
                  shape = plot.opt$pch.pobs)  +
 
-      geom_line(aes(group=group),
+      geom_line(aes(group=.data$group),
                 linetype = plot.opt$lty.lobs,
                 color = plot.opt$col.lobs,
-                size = plot.opt$lwd.lobs )+
+                linewidth = plot.opt$lwd.lobs )+
 
       {if(plot.opt$line.loq==TRUE)
 
         geom_hline(dataplot,mapping = aes(yintercept = as.numeric(loq)),
                    linetype = plot.opt$lty.line.loq,
                    color = plot.opt$col.line.loq,
-                   size = plot.opt$lwd.line.loq  )}+
+                   linewidth = plot.opt$lwd.line.loq  )}+
       
       {if(plot.opt$plot.loq ==TRUE)
         geom_point(dataloq_plot,
@@ -375,10 +374,10 @@ npde.plot.data<-function(npdeObject,...) {
                   size = plot.opt$size.pobs,
                   shape = plot.opt$pch.pobs) +
 
-       geom_line(aes(group=group),
+       geom_line(aes(group=.data$group),
                  linetype = plot.opt$lty.lobs,
                  color = plot.opt$col.lobs,
-                 size = plot.opt$lwd.lobs )+
+                 linewidth = plot.opt$lwd.lobs )+
 
        scale_x_continuous(plot.opt$xlab, scales::pretty_breaks(n = plot.opt$breaks.x)) +
        scale_y_continuous(plot.opt$ylab, scales::pretty_breaks(n = plot.opt$breaks.y))
