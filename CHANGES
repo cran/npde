@@ -1,3 +1,11 @@
+Version 3.4 - June 2023
+
+o Bugfixes
+   * scatterplots versus X crashed when only one value was available in the dataset (ex: single observation per subject, with everyone sampled at the same time)
+o Related notes: 
+   * the problem can still occur within covsplit (if for one value of the covariate, only one X-value is present in the dataset). In this case, we recommend to check the plot by hand.
+   * user discretion is required to make sure whether scatterplots versus a single value on the X-axis are likely to be informative
+
 Version 3.3 - November 2022
 
 o Bugfixes

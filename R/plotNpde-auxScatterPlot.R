@@ -105,8 +105,14 @@ aux.npdeplot.scatter <- function(obsmat, pimat, plot.opt) {
   #colorYAxis = "black"
 
   # Interpolation data - loop over the covariate
+  if(length(unique(pimat$xcent))<2) { # repeat 
+    needinterpol<-FALSE
+    pimat <- rbind(pimat, pimat)
+    xc1 <- pimat$xcent[1]
+    pimat$xcent <- pimat$xcent*c(0.99, 1.01)
+  } else needinterpol<-TRUE
 
-  if(plot.opt$bands) { # no need to compute if bands are not plotted
+  if(plot.opt$bands & needinterpol) { # no need to compute if bands are not plotted
     plotdatainterpol1<-plotdatainterpol2<-plotdatainterpol3<-NULL
     for (iter in 1:numberCategories){
       icat = as.character(namesCategories[iter])
@@ -262,32 +268,32 @@ aux.npdeplot.scatter <- function(obsmat, pimat, plot.opt) {
           geom_ribbon(aes(ymin = .data$psup.lower, ymax = .data$psup.upper), fill = plot.opt$fill.bands, alpha = plot.opt$alpha.bands) } +
 
         # fill intersection area as outliers
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol1,
                       mapping = aes(x = .data$x_area_0.25, ymin = .data$y_area_0.25, ymax = pmin(.data$Y0.025.1, .data$y_area_0.25)),
                       fill = plot.opt$fill.outliers.bands, alpha = plot.opt$alpha.outliers.bands) } +
 
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol1,
                       mapping = aes(x = .data$x_area_0.25, ymin = .data$y_area_0.25, ymax = pmax(.data$Y0.025, .data$y_area_0.25)),
                       fill = plot.opt$fill.outliers.bands, alpha = plot.opt$alpha.outliers.bands) } +
 
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol2,
                       mapping = aes(x = .data$x_area_0.5, ymin = .data$y_area_0.5,ymax = pmin(.data$Y0.5.1, .data$y_area_0.5)),
                       fill = plot.opt$fill.outliers.med, alpha = plot.opt$alpha.outliers.med) } +
 
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol2,
                       mapping = aes(x = .data$x_area_0.5,ymin = .data$y_area_0.5,ymax = pmax(.data$Y0.5, .data$y_area_0.5)),
                       fill = plot.opt$fill.outliers.med, alpha = plot.opt$alpha.outliers.med) } +
 
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol3,
                       mapping = aes(x = .data$x_area_0.975, ymin = .data$y_area_0.975, ymax = pmin(.data$Y0.975.1, .data$y_area_0.975)),
                       fill = plot.opt$fill.outliers.bands, alpha = plot.opt$alpha.outliers.bands) } +
 
-        { if ( plot.opt$bands == TRUE )
+        { if ( plot.opt$bands == TRUE  & needinterpol)
           geom_ribbon(plotdatainterpol3,
                       mapping = aes(x = .data$x_area_0.975,ymin = .data$y_area_0.975,ymax = pmax(.data$Y0.975, .data$y_area_0.975)),
                       fill = plot.opt$fill.outliers.bands, alpha = plot.opt$alpha.outliers.bands) } +
