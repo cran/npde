@@ -11,7 +11,7 @@
 \alias{read,NpdeSimData-method}
 \title{Read data into structures (internal)}
 \usage{
-read(object, dat, detect=TRUE, verbose=FALSE, ...)
+read(object, dat, detect=TRUE, verbose=FALSE, \dots)
 
 \S4method{read}{NpdeData}(object, dat, detect = TRUE, verbose = FALSE, ...)
 
@@ -29,7 +29,7 @@ predictor and simulated response}
 
 \item{verbose}{a boolean; messages are printed if verbose is TRUE (defaults to FALSE)}
 
-\item{dots}{additional arguments for compatibility with generic}
+\item{\dots}{additional arguments for compatibility with generic}
 }
 \value{
 an object of class \code{"\linkS4class{NpdeData}"} or \code{"\linkS4class{NpdeSimData}"}

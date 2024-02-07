@@ -74,7 +74,7 @@ print(x)
 }
 \references{
 K. Brendel, E. Comets, C. Laffont, C. Laveille, and F.
-Mentr{\'e}. Metrics for external model evaluation with an application to the
+Mentré. Metrics for external model evaluation with an application to the
 population pharmacokinetics of gliclazide. \emph{Pharmaceutical Research},
 23:2036--49, 2006.
 }
